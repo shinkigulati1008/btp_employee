@@ -1,0 +1,38 @@
+{
+  "name": "btp_be_employee",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "@sap/xssec": "^3.6.1",
+    "express": "^4",
+    "make": "^0.8.1"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
+    "@sap/ux-specification": "^1.120.8"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-btp_ui_employee": "cds watch --open btp_ui_employee/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/btp_ui_employee"
+  ],
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "model": "srv/employee-service.cds",
+        "credentials": {
+          "database": "empdb.db"
+        }
+      }
+    }
+  }
+}
